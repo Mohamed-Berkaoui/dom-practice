@@ -10,36 +10,10 @@ function handleDropdown() {
 }
 
 $dropdownText.addEventListener("click", handleDropdown);
-// create boxes for the products
+
 var $section = document.getElementsByTagName("section")[0];
-var cart = JSON.parse(localStorage.getItem("cart")) || [];
-var $qty = document.querySelector(".qty");
-var quantity = 0;
-for (let i = 0; i < cart.length; i++) {
-  quantity += cart[i].qty;
-}
-$qty.textContent = quantity;
 
-function handleAddToCart(product) {
-  var test = false;
-  for (let i = 0; i < cart.length; i++) {
-    if (product.id == cart[i].product.id) {
-      cart[i].qty += 1;
-      test = true;
-    }
-  }
-  if (test == false) {
-    cart.push({ product: product, qty: 1 });
-  }
-  alert("added to cart");
-  localStorage.setItem("cart", JSON.stringify(cart));
-  var quantity = 0;
-  for (let i = 0; i < cart.length; i++) {
-    quantity += cart[i].qty;
-  }
-  $qty.textContent = quantity;
-}
-
+// create boxes for the products
 function createBox(product) {
   var $box = document.createElement("div");
   $box.classList.add("box");
@@ -69,3 +43,34 @@ fetch("https://fakestoreapi.com/products")
       $section.appendChild(box);
     }
   });
+
+
+  /// create the cart and handle the add to cart
+var cart = JSON.parse(localStorage.getItem("cart")) || [];
+//quantity inside the cart
+var $qty = document.querySelector(".qty");
+var quantity = 0;
+for (let i = 0; i < cart.length; i++) {
+  quantity += cart[i].qty;
+}
+$qty.textContent = quantity;
+
+function handleAddToCart(product) {
+  var test = false;
+  for (let i = 0; i < cart.length; i++) {
+    if (product.id == cart[i].product.id) {
+      cart[i].qty += 1;
+      test = true;
+    }
+  }
+  if (test == false) {
+    cart.push({ product: product, qty: 1 });
+  }
+  alert("added to cart");
+  localStorage.setItem("cart", JSON.stringify(cart));
+  var quantity = 0;
+  for (let i = 0; i < cart.length; i++) {
+    quantity += cart[i].qty;
+  }
+  $qty.textContent = quantity;
+}
