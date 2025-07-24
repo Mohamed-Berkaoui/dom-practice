@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ecommerce</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js"  defer></script>
-    <script
+    <link rel="stylesheet" href="cartStyle.css" />
+      <script
       src="https://kit.fontawesome.com/b9ba9bf89a.js"
       crossorigin="anonymous"
     ></script>
+    <script src="cartScript.js" defer></script>
+    <title>Document</title>
   </head>
   <body>
     <nav>
@@ -18,10 +18,12 @@
         alt=""
       />
       <div>
-        <p>home</p>
+        <p><a href="/index.html">home</a></p>
         <div class="dropdown-container">
-          <p class="dropdown-text">categories <i class="fa-solid fa-caret-down"></i></p>
-          <div class="dropdown" style="visibility: hidden;">
+          <p class="dropdown-text">
+            categories <i class="fa-solid fa-caret-down"></i>
+          </p>
+          <div class="dropdown" style="visibility: hidden">
             <p>category 1</p>
             <p>category 2</p>
             <p>category 3</p>
@@ -30,13 +32,15 @@
         </div>
         <p>about</p>
         <p>contact</p>
-        <p><a href="/shoppingCart.html"><i class="fa-solid fa-basket-shopping"></i> <span class="qty"></span></a></p>
+        <p>
+          <i class="fa-solid fa-basket-shopping"></i> <span class="qty"></span>
+        </p>
       </div>
     </nav>
 
     <section>
 
-     
     </section>
+    <h4 class="total"></h4>
   </body>
 </html>
